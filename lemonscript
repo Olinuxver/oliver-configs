@@ -1,0 +1,18 @@
+#! /bin/bash
+
+while :
+do
+	workspacev=$(xdotool get_desktop)
+	
+	workspacevr=$(($workspacev + 1))
+
+	clockv=$(clock | cut -b 5-9)
+
+	cpuusagev=$(mpstat | cut -b 18-27 | awk NR==4'{print $1}')
+
+	ramusagev=$(free -h | cut -b 76-80 | awk NR==2'{print $1}')	
+
+	echo "%{B#B3222222} %{l} $workspacevr %{r} %{B#55acb8} CPU: $cpuusagev %{B#B3222222} %{B#B360cc60} MEM: $ramusagev %{B#B3222222} %{B#B3c93131} $clockv %{B#B3222222}"
+
+	sleep 0.1
+done
