@@ -14,5 +14,5 @@ do
 
 	echo "%{B#B3222222} %{l} $workspacevr %{r} %{B#55acb8} CPU: $cpuusagev %{B#B3222222} %{B#B360cc60} MEM: $ramusagev %{B#B3222222} %{B#B3c93131} $clockv %{B#B3222222}"
 
-	sleep 0.1
+	sleep 0.2
 done
